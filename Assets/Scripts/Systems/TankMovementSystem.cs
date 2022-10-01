@@ -18,10 +18,15 @@ partial class TankMovementSystem : SystemBase
         // encouraged, but it remains convenient until we get feature parity with IFE.
         Entities
             .WithAll<Tank>()
-            .ForEach((TransformAspect transform) =>
+            .ForEach((Entity entity, TransformAspect transform) =>
             {
                 // Notice that this is a lambda being passed as parameter to ForEach.
                 var pos = transform.Position;
+
+                // This does not modify the actual position of the tank, only the point at
+                // which we sample the 3D noise function. This way, every tank is using a
+                // different slice and will move along its own different random flow field.
+                pos.y = entity.Index;
 
                 // Unity.Mathematics.noise provides several types of noise functions.
                 // Here we use the Classic Perlin Noise (cnoise).
