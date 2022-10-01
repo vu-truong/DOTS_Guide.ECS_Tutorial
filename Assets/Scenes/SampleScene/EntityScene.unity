@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 769244735}
   - component: {fileID: 769244734}
   - component: {fileID: 769244733}
+  - component: {fileID: 769244736}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -207,6 +208,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769244736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769244731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bbcfd018fb00246838706f8590b5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1522493231
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,3 +432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3e85e21b5643c438df1d33075b8cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CannonBallPrefab: {fileID: 8186100406583817820, guid: 7134d1a42ebd71f41a3f5995d2234cd4,
+    type: 3}
+  CannonBallSpawn: {fileID: 1522493232}
