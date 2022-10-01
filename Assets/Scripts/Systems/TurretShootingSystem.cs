@@ -1,6 +1,7 @@
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Rendering;
 using Unity.Transforms;
 
 [BurstCompile]
@@ -74,5 +75,8 @@ partial struct TurretShoot : IJobEntity
         {
             Speed = spawnLocalToWorld.Value.Forward() * 20.0f
         });
+
+        // The line below propagates the color from the turret to the cannon ball.
+        ECB.SetComponent(instance, new URPMaterialPropertyBaseColor { Value = turret.Color });
     }
 }
