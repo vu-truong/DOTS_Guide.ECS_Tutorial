@@ -48,6 +48,9 @@ partial struct TurretShootingSystem : ISystem
     }
 }
 
+// Requiring the Shooting tag component effectively prevents this job from running
+// for the tanks which are in the safe zone.
+[WithAll(typeof(Shooting))]
 [BurstCompile]
 partial struct TurretShoot : IJobEntity
 {

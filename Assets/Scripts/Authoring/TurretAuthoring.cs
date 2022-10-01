@@ -20,5 +20,8 @@ class TurretBaker : Baker<TurretAuthoring>
             CannonBallPrefab = GetEntity(authoring.CannonBallPrefab),
             CannonBallSpawn = GetEntity(authoring.CannonBallSpawn)
         });
+
+        // Enableable components are always initially enabled.
+        AddComponent<Shooting>();
     }
 }
